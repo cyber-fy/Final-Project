@@ -1,5 +1,5 @@
 # This is a sample Python script.
-
+import pygame
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -17,3 +17,11 @@ if __name__ == '__main__':
     print("test 2")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+## PUSH
+## 1. git add .
+## 2. git commit -m "type whatever message you want along with this"
+## 3. git push
+
+## PULL
+## 1. git pull
