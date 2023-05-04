@@ -18,15 +18,21 @@ pygame.init()
 screen = pygame.display.set_mode((600, 900))
 test_surface = pygame.Surface((100, 200))
 test_surface.fill('Red')
-game_surface = pygame.image.load('backgroundd.jpg').convert_alpha()
+background = pygame.image.load('Images/backroundnew.jpeg').convert()
+bread = pygame.image.load('Images/bread.png').convert_alpha()
+##game_surface = pygame.image.convert(background)
+pygame.display.flip()
+screen.blit(background, (50, 50))
+pygame.display.update()
+
 
 ##testing message
-
+##game surface
 while True:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-    screen.blit(test_surface,(0,0))
+      if event.type == pygame.QUIT:
+        pygame.quit()
+    screen.blit(background,(0,0))
+    screen.blit(bread,(300,520))
     pygame.display.update()
 
