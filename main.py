@@ -24,15 +24,27 @@ bread = pygame.image.load('Images/bread.png').convert_alpha()
 pygame.display.flip()
 screen.blit(background, (50, 50))
 pygame.display.update()
+clock = pygame.time.Clock()
+running = True
 
 
-##testing message
 ##game surface
-while True:
+while running:
     for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            #mouse.get_pos
+            #collide_point
+        ##Make our objects into rectangles using pygame.rect
+        ## maybe can do pyqt5 stuff within pygame?
+
+
+
+
       if event.type == pygame.QUIT:
         pygame.quit()
     screen.blit(background,(0,0))
     screen.blit(bread,(300,520))
+
     pygame.display.update()
+
 
