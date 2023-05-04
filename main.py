@@ -5,7 +5,7 @@ import pygame
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 ## PUSH
-## 1. git add .
+## 1. git add .i
 ## 2. git commit -m "type whatever message you want along with this"
 ## 3. git push
 
@@ -18,14 +18,15 @@ pygame.init()
 screen = pygame.display.set_mode((600, 900))
 test_surface = pygame.Surface((100, 200))
 test_surface.fill('Red')
-board_surface= pygame.image.load('backgroundnew.jpeg').convert()
+game_surface = pygame.image.load('backgroundd.jpg').convert_alpha()
 
+##testing message
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-    screen.blit(board_surface,(0,0))
+    screen.blit(test_surface,(0,0))
     pygame.display.update()
 
