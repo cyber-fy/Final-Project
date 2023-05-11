@@ -11,8 +11,6 @@ from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
 pygame.init()
 list_items = []
 screen = pygame.display.set_mode((600, 900))
-test_surface = pygame.Surface((100, 200))
-test_surface.fill('Red')
 background = pygame.image.load('Images/backroundnew.jpeg').convert()
 bin = pygame.image.load('Images/bin image.png').convert_alpha()
 binsize = pygame.transform.scale(bin, (180, 190))
@@ -103,10 +101,4 @@ while True:
         item.draw(screen)
         item.update()
     pygame.display.update()
-
-
-
-
-
-
 
