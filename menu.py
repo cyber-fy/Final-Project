@@ -1,5 +1,7 @@
 import pygame
 import Button
+import game
+
 pygame.init()
 screen_width = 800
 screen_height = 800
@@ -7,9 +9,11 @@ screen = pygame.display.set_mode([screen_width, screen_height])
 screen.fill((0,0,255))
 pygame.display.set_caption("Operation")
 
-def main ():
+def main():
     running = True
+
     while running:
+        mouse = pygame.mouse.get_pos()
         #text, color, font, x, y, image#
         start_button = Button.Button("Start", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 395, pygame.image.load("Images/button.png"))
         instruction_button = Button.Button("Rules", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 435, pygame.image.load("Images/button.png"))
@@ -25,7 +29,15 @@ def main ():
                 pygame.quit()
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                pass
+                if start_button.button_position(mouse):
+                    game.main()
+                if instruction_button.button_position(mouse):
+                    pass
+                    # text = "welcome"
+                    # display =
+                if quit_button.button_position(mouse):
+
+                    running = False
         pygame.display.update()
 
 
