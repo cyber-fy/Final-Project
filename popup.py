@@ -11,9 +11,9 @@ def main ():
     running = True
     while running:
         #text, color, font, x, y, image#
-        start_button = Button.Button("Start", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 395, pygame.image.load("Images/button image.png"))
-        instruction_button = Button.Button("Rules", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 435, pygame.image.load("Images/button image.png"))
-        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 475, pygame.image.load("Images/button image.png"))
+        start_button = Button.Button("Start", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 395, pygame.image.load("Images/button.png"))
+        instruction_button = Button.Button("Rules", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 435, pygame.image.load("Images/button.png"))
+        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 475, pygame.image.load("Images/button.png"))
         buttons = [start_button, instruction_button, quit_button]
 
         for b in buttons:
