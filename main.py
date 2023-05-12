@@ -89,12 +89,12 @@ pygame.display.flip()
 #Initialize coordinates of area
 bin_rect = pygame.Rect(40, 40, 50, 50)
 #we should end up implementign somehow:
-if bin_rect.colliderect(Item.rect):
+#if bin_rect.colliderect(Item.rect):
 
 
 
-
-while True:
+running = True
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
