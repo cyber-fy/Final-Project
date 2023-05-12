@@ -85,6 +85,15 @@ list_items.append(smallfunny_item)
 list_items.append(smallpail_item)
 list_items.append(smallwrench_item)
 pygame.display.flip()
+
+#Initialize coordinates of area
+bin_rect = pygame.Rect(40, 40, 50, 50)
+#we should end up implementign somehow:
+if bin_rect.colliderect(Item.rect):
+
+
+
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -95,6 +104,9 @@ while True:
         elif event.type == MOUSEBUTTONDOWN:
             for item in list_items:
                 item.click = item.rect.collidepoint(event.pos)
+    for item in list_items:
+        if bin_rect.colliderect(item.rect):
+            pass #placeholder
     screen.blit(background, (0,0))
     screen.blit(binsize, (50, 40))
     for item in list_items:
