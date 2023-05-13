@@ -2,6 +2,7 @@ import pygame
 import Button
 import game
 import rules
+import pygame_gui
 
 pygame.init()
 screen_width = 800
