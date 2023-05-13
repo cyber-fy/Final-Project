@@ -5,6 +5,7 @@ import pygame
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 import pygame
+import quiztest
 from items import Item
 from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
 def main():
@@ -105,8 +106,8 @@ def main():
                 for item in list_items:
                     item.click = item.rect.collidepoint(event.pos)
         for item in list_items:
-            if bin_rect.colliderect(item.rect):
-                pass #placeholder
+            if bin_rect.colliderect(smallbread_item):
+               quiztest.main()
         screen.blit(background, (0,0))
         screen.blit(binsize, (50, 40))
         for item in list_items:
