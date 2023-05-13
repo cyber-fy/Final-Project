@@ -5,7 +5,7 @@ import pygame
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 import pygame
-import quiztest
+import heartquiz
 from items import Item
 from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
 def main():
@@ -105,16 +105,14 @@ def main():
             elif event.type == MOUSEBUTTONDOWN:
                 for item in list_items:
                     item.click = item.rect.collidepoint(event.pos)
-        for item in list_items:
-            if bin_rect.colliderect(smallbread_item):
-               quiztest.main()
         screen.blit(background, (0,0))
         screen.blit(binsize, (50, 40))
         for item in list_items:
             item.draw(screen)
             item.update()
+        for item in list_items:
+            if bin_rect.colliderect(smallheart_item):
+                heartquiz.main()
         pygame.display.update()
-
-
 if __name__ == "__main__":
     main()

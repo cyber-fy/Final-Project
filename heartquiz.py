@@ -5,9 +5,12 @@ import rules
 
 
 pygame.init()
-screen = pygame.display.set_mode((600, 900))
-background = pygame.image.load('Images/blank test.png').convert()
-backgroundsize = pygame.transform.scale(background, (600, 900))
+pygame.init()
+screen_width = 1150
+screen_height = 700
+screen = pygame.display.set_mode([screen_width, screen_height])
+background = pygame.image.load('Images/heart slide 1.png').convert()
+backgroundsize = pygame.transform.scale(background, (1150, 700))
 pygame.display.set_caption("Operation")
 
 
