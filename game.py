@@ -15,7 +15,7 @@ def main():
     background = pygame.image.load('Images/backroundnew.jpeg').convert()
     bin = pygame.image.load('Images/bin image.png').convert_alpha()
     binsize = pygame.transform.scale(bin, (180, 190))
-
+    ping_sound = pygame.mixer.Sound("Images/Ping sound effect.mp3")
 
     #Loop begins
     #step 1: load the image
@@ -113,6 +113,9 @@ def main():
         for item in list_items:
             if bin_rect.colliderect(smallheart_item):
                 heartquiz.main()
+            if bin_rect.colliderect(smallbread_item):
+                pygame.mixer.Sound.play(ping_sound, 1)
         pygame.display.update()
+
 if __name__ == "__main__":
     main()
