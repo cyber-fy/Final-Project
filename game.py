@@ -96,7 +96,7 @@ def main():
     pygame.display.flip()
 
     #Initialize coordinates of area
-    bin_rect = pygame.Rect(40, 40, 50, 50)
+    bin_rect = pygame.Rect(40, 40, 100, 100)
     #we should end up implementign somehow:
     #if bin_rect.colliderect(Item.rect):
 
