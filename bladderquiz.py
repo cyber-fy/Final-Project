@@ -1,8 +1,10 @@
 import pygame
-import Button
+import sys
 import game
-import rules
-
+import Button
+import bladderanswer1
+import bladderanswer2
+import bladderanswer3
 
 
 def quiz3():
@@ -12,14 +14,29 @@ def quiz3():
     screen = pygame.display.set_mode([screen_width, screen_height])
     background = pygame.image.load('Images/bladder slide 1.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
-    pygame.display.set_caption("Bladder Quiz")
+    pygame.display.set_caption("Heart Quiz")
+
+    button_image = pygame.image.load("Images/quizbutton.png").convert_alpha()
+    resized_button_image = pygame.transform.scale(button_image, (50, 50))
+
+
     running = True
 
     while running:
         mouse = pygame.mouse.get_pos()
         #text, color, font, x, y, image#
-        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 600, 600, pygame.image.load("Images/button.png"))
-        buttons = [quit_button]
+
+        option1_button = Button.Button("", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 140,
+                                       310, resized_button_image)
+
+        option2_button = Button.Button("", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 140,
+                                       420, resized_button_image)
+
+        option3_button = Button.Button("", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 140,
+                                       520, resized_button_image)
+        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 450, 600, pygame.image.load("Images/button.png"))
+        backtogame_button = Button.Button("Back to Game", (255,255,255), pygame.font.SysFont("Helvetica", 20), 650, 600, pygame.image.load("Images/button.png"))
+        buttons = [quit_button, option1_button, option2_button, option3_button, backtogame_button]
 
         screen.blit(backgroundsize, (0, 0))
         for b in buttons:
@@ -33,6 +50,16 @@ def quiz3():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if quit_button.button_position(mouse):
                     running = False
+                    pygame.quit()
+                    sys.exit()
+                if option1_button.button_position(mouse):
+                    bladderanswer1.bladderanswer1()
+                if option2_button.button_position(mouse):
+                    bladderanswer2.bladderanswer2()
+                if option3_button.button_position(mouse):
+                    bladderanswer3.bladderanswer3()
+                if backtogame_button.button_position(mouse):
+                    game.main()
         pygame.display.update()
 
 

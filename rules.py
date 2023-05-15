@@ -36,8 +36,8 @@ def rules():
                   "<br><br>"
                   "<b>Step 2:</b> Drag the body part into the red disposal bin."
                   "<br><br>"
-                  "<b>Step 3:</b> Learn about some of the real world explanations as to why you may have to perform "
-                  "surgery on this body part!"
+                  "<b>Step 3:</b> Learn about some of the real world explanations as to why you may have to 'perform "
+                  "surgery on' (or really just provide treatment for) this body part!"
                   "<br><br>"
                   "Now press the red quit button for the start button so you can begin!"
                   "</font>",

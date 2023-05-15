@@ -1,5 +1,7 @@
 import pygame
+import heartquiz
 import Button
+import sys
 import game
 import rules
 
@@ -15,8 +17,14 @@ def heartanswer3():
     running = True
 
     while running:
-        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 600, 600, pygame.image.load("Images/button.png"))
-        buttons = [quit_button,]
+        mouse = pygame.mouse.get_pos()
+        quit_button = Button.Button("Quit", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 400, 600,
+                                    pygame.image.load("Images/button.png"))
+        backtogame_button = Button.Button("Back to Game", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 600,
+                                          600, pygame.image.load("Images/button.png"))
+        backtoheart_button = Button.Button("Back to Heart", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 800,
+                                           600, pygame.image.load("Images/button.png"))
+        buttons = [quit_button, backtogame_button, backtoheart_button]
 
         screen.blit(backgroundsize, (0, 0))
         for b in buttons:
@@ -27,6 +35,15 @@ def heartanswer3():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if quit_button.button_position(pygame.mouse.get_pos()):
+                    running = False
+                    pygame.quit()
+                    sys.exit()
+                if backtogame_button.button_position(mouse):
+                    game.main()
+                if backtoheart_button.button_position(mouse):
+                    heartquiz.quiz1()
         pygame.display.update()
 
 

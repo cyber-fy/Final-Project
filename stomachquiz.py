@@ -1,5 +1,6 @@
 import pygame
 import Button
+import sys
 import game
 import rules
 
@@ -31,8 +32,11 @@ def quiz2():
                 pygame.quit()
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                if quit_button.button_position(mouse):
+                if quit_button.button_position(pygame.mouse.get_pos()):
                     running = False
+                    pygame.quit()
+                    sys.exit()
+
         pygame.display.update()
 
 

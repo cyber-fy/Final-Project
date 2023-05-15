@@ -12,7 +12,6 @@ import throatquiz
 import ribquiz
 from items import Item
 from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
-import Button
 
 def main():
     pygame.init()

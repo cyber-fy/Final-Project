@@ -1,18 +1,18 @@
 import pygame
-import heartquiz
+import bladderquiz
 import Button
 import sys
 import game
 import rules
 
-def heartanswer2():
+def bladderanswer1():
     pygame.init()
     screen_width = 1150
     screen_height = 700
     screen = pygame.display.set_mode([screen_width, screen_height])
-    background = pygame.image.load('Images/heart slide 3.png').convert()
+    background = pygame.image.load('Images/bladder slide 2.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
-    pygame.display.set_caption("Heart Answer 2")
+    pygame.display.set_caption("Bladder Answer 1")
 
     running = True
 
@@ -22,9 +22,9 @@ def heartanswer2():
                                     pygame.image.load("Images/button.png"))
         backtogame_button = Button.Button("Back to Game", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 600,
                                           650, pygame.image.load("Images/button.png"))
-        backtoheart_button = Button.Button("Back to Heart", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 800,
+        backtobladder_button = Button.Button("Back to Bladder", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 800,
                                            650, pygame.image.load("Images/button.png"))
-        buttons = [quit_button, backtogame_button, backtoheart_button]
+        buttons = [quit_button, backtogame_button, backtobladder_button]
 
 
         screen.blit(backgroundsize, (0, 0))
@@ -43,10 +43,10 @@ def heartanswer2():
                     sys.exit()
                 if backtogame_button.button_position(mouse):
                     game.main()
-                if backtoheart_button.button_position(mouse):
-                    heartquiz.quiz1()
+                if backtobladder_button.button_position(mouse):
+                    bladderquiz.quiz3()
         pygame.display.update()
 
 
 if __name__ == "__main__":
-    heartanswer2()
+    bladderanswer1()
