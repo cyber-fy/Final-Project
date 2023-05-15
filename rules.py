@@ -3,6 +3,8 @@
 import pygame
 import pygame_gui
 
+import game
+
 import pygame_gui.data
 
 from pygame.color import Color
@@ -12,7 +14,7 @@ from pygame_gui.elements.ui_text_box import UITextBox
 
 
 
-def main():
+def rules():
     pygame.init()
 
     display_surface = pygame.display.set_mode((800, 600))
@@ -56,4 +58,4 @@ def main():
         pygame.display.update()
 
 if __name__ == "__main__":
-    main()
+    rules()

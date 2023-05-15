@@ -15,7 +15,7 @@ pygame.display.set_caption("Operation")
 
 
 
-def main():
+def quiz1():
     running = True
 
     while running:
@@ -26,8 +26,8 @@ def main():
         quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 390, 495, pygame.image.load("Images/button.png"))
         buttons = [start_button, instruction_button, quit_button]
 
+        screen.blit(backgroundsize, (0, 0))
         for b in buttons:
-            screen.blit(backgroundsize, (0, 0))
             screen.blit(b.image, b.rect)
             screen.blit(b.text, b.text_rect)
 
@@ -47,4 +47,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    quiz1()

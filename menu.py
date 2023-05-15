@@ -11,7 +11,12 @@ screen = pygame.display.set_mode([screen_width, screen_height])
 screen.fill((0,160,255))
 pygame.display.set_caption("Operation")
 
-def main():
+pygame.font.init()
+font = pygame.font.Font(None, 54)
+text = font.render("Operations Game", True, (255, 255, 255))
+
+
+def menu():
     running = True
 
     while running:
@@ -34,12 +39,14 @@ def main():
                 if start_button.button_position(mouse):
                     game.main()
                 if instruction_button.button_position(mouse):
-                    rules.main()
+                    rules.rules()
                 if quit_button.button_position(mouse):
-
+                    ##note: I want to try to do something so that the text disappears when quit button pressed bc rn it still shows up
                     running = False
+
+        screen.blit(text, (240, 275))
         pygame.display.update()
 
 
 if __name__ == "__main__":
-    main()
+    menu()

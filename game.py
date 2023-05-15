@@ -112,7 +112,8 @@ def main():
             item.update()
         for item in list_items:
             if bin_rect.colliderect(smallheart_item):
-                heartquiz.main()
+                running = False
+                heartquiz.quiz1()
             if bin_rect.colliderect(smallbread_item):
                 pygame.mixer.Sound.play(ping_sound, 1)
         pygame.display.update()
