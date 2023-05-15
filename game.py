@@ -6,8 +6,14 @@ import pygame
 
 import pygame
 import heartquiz
+import stomachquiz
+import bladderquiz
+import throatquiz
+import ribquiz
 from items import Item
 from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
+import Button
+
 def main():
     pygame.init()
     list_items = []
@@ -16,6 +22,8 @@ def main():
     bin = pygame.image.load('Images/bin image.png').convert_alpha()
     binsize = pygame.transform.scale(bin, (180, 190))
     ping_sound = pygame.mixer.Sound("Images/Ping sound effect.mp3")
+
+
 
     #Loop begins
     #step 1: load the image
@@ -111,12 +119,27 @@ def main():
             item.draw(screen)
             item.update()
         for item in list_items:
+            ##window pop up code section
             if bin_rect.colliderect(smallheart_item):
                 running = False
                 heartquiz.quiz1()
+            if bin_rect.colliderect(smallbutterfly_item):
+                running = False
+                stomachquiz.quiz2()
+            if bin_rect.colliderect(smallbread_item):
+                running = False
+                bladderquiz.quiz3()
+            if bin_rect.colliderect(smallapple_item):
+                running = False
+                throatquiz.quiz4()
+            if bin_rect.colliderect(smallrib_item):
+                running = False
+                ribquiz.quiz5()
+            ##sound code section
             if bin_rect.colliderect(smallbread_item):
                 pygame.mixer.Sound.play(ping_sound, 1)
         pygame.display.update()
+
 
 if __name__ == "__main__":
     main()

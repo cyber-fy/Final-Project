@@ -5,14 +5,15 @@ import rules
 
 
 
-def quiz1():
+def quiz4():
+    pygame.init()
     pygame.init()
     screen_width = 1150
     screen_height = 700
     screen = pygame.display.set_mode([screen_width, screen_height])
-    background = pygame.image.load('Images/heart slide 1.png').convert()
+    background = pygame.image.load('Images/throat slide 1.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
-    pygame.display.set_caption("Heart Quiz")
+    pygame.display.set_caption("Throat Quiz")
     running = True
 
     while running:
@@ -37,4 +38,4 @@ def quiz1():
 
 
 if __name__ == "__main__":
-    quiz1()
+    quiz4()
