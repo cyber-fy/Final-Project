@@ -18,10 +18,8 @@ def main():
     bin = pygame.image.load('Images/bin image.png').convert_alpha()
     binsize = pygame.transform.scale(bin, (180, 190))
     ping_sound = pygame.mixer.Sound("Images/Ping sound effect.mp3")
+    collision_status = {}
 
-
-
-    #Loop begins
     #step 1: load the image
     bread = pygame.image.load('Images/bread.png').convert_alpha()
     butterfly = pygame.image.load('Images/butterfly.png').convert_alpha()
@@ -98,15 +96,9 @@ def main():
     button_image = pygame.image.load("Images/quizbutton.png").convert_alpha()
     resized_button_image = pygame.transform.scale(button_image, (100, 100))
 
-    ##keyslide = pygame.image.load('Images/lung slide 1.png').convert_alpha()
-                   ## screen.blit(keyslide, (50, 40))
-
     running = True
     while running:
         mouse = pygame.mouse.get_pos()
-
-        sound_played = False
-        ankle_collided = False
 
         screen.blit(background, (0, 0))
         screen.blit(binsize, (50, 40))
@@ -134,11 +126,9 @@ def main():
         for item in list_items:
             item.draw(screen)
             item.update()
-
-            ##this is what we're trying but it's not working
-            if sound_played == True:
-                ping_sound.stop()
-
+            if bin_rect.colliderect(item.rect) and not collision_status.get(item, False):
+                pygame.mixer.Sound.play(ping_sound)
+                collision_status[item] = True
             if bin_rect.colliderect(smallbread_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
@@ -172,25 +162,6 @@ def main():
                 score = 1
                 running = False
                 lungquiz.quiz5()
-            if bin_rect.colliderect(smallankle_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
-                ##here is our trial
-                sound_played = True
-            if bin_rect.colliderect(smallhorse_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
-            if bin_rect.colliderect(smallfunny_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
-            if bin_rect.colliderect(smallpail_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
-                pass
-            if bin_rect.colliderect(smallwrench_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
-
         pygame.display.update()
 
 
