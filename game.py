@@ -1,9 +1,3 @@
-# This is a sample Python script.
-import pygame
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
 import pygame
 import heartquiz
 import stomachquiz
@@ -111,6 +105,9 @@ def main():
     while running:
         mouse = pygame.mouse.get_pos()
 
+        sound_played = False
+        ankle_collided = False
+
         screen.blit(background, (0, 0))
         screen.blit(binsize, (50, 40))
 
@@ -137,32 +134,49 @@ def main():
         for item in list_items:
             item.draw(screen)
             item.update()
-        for item in list_items:
-            ##sound code section
+
+            ##this is what we're trying but it's not working
+            if sound_played == True:
+                ping_sound.stop()
+
             if bin_rect.colliderect(smallbread_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
+                running = False
+                bladderquiz.quiz3()
             if bin_rect.colliderect(smallbutterfly_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
+                running = False
+                stomachquiz.quiz2()
             if bin_rect.colliderect(smallapple_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
+                running = False
+                throatquiz.quiz4()
             if bin_rect.colliderect(smallheart_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
+                running = False
+                heartquiz.quiz1()
             if bin_rect.colliderect(smallbone_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
             if bin_rect.colliderect(smallrib_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
-            if bin_rect.colliderect(smallankle_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
+                running = False
+                ribquiz.quiz6()
             if bin_rect.colliderect(smallwishbone_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
+                running = False
+                lungquiz.quiz5()
+            if bin_rect.colliderect(smallankle_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+                ##here is our trial
+                sound_played = True
             if bin_rect.colliderect(smallhorse_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
@@ -176,26 +190,6 @@ def main():
             if bin_rect.colliderect(smallwrench_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
-
-            ##window pop up code section
-            if bin_rect.colliderect(smallheart_item):
-                running = False
-                heartquiz.quiz1()
-            if bin_rect.colliderect(smallbutterfly_item):
-                running = False
-                stomachquiz.quiz2()
-            if bin_rect.colliderect(smallbread_item):
-                running = False
-                bladderquiz.quiz3()
-            if bin_rect.colliderect(smallapple_item):
-                running = False
-                throatquiz.quiz4()
-            if bin_rect.colliderect(smallrib_item):
-                running = False
-                ribquiz.quiz6()
-            if bin_rect.colliderect(smallwishbone_item):
-                running = False
-                lungquiz.quiz5()
 
         pygame.display.update()
 
