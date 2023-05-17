@@ -42,7 +42,6 @@ def menu():
                 if instruction_button.button_position(mouse):
                     rules.rules()
                 if quit_button.button_position(mouse):
-                    ##note: I want to try to do something so that the text disappears when quit button pressed b
                     running = False
                     pygame.quit()
                     sys.exit()
