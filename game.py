@@ -11,6 +11,8 @@ import bladderquiz
 import throatquiz
 import ribquiz
 import lungquiz
+import Button
+import key
 from items import Item
 from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
 
@@ -97,13 +99,29 @@ def main():
 
     #Initialize coordinates of area
     bin_rect = pygame.Rect(40, 40, 100, 100)
-    #we should end up implementign somehow:
-    #if bin_rect.colliderect(Item.rect):
 
+    ##Button for key
+    button_image = pygame.image.load("Images/quizbutton.png").convert_alpha()
+    resized_button_image = pygame.transform.scale(button_image, (100, 100))
 
+    ##keyslide = pygame.image.load('Images/lung slide 1.png').convert_alpha()
+                   ## screen.blit(keyslide, (50, 40))
 
     running = True
     while running:
+        mouse = pygame.mouse.get_pos()
+
+        screen.blit(background, (0, 0))
+        screen.blit(binsize, (50, 40))
+
+        keybutton = Button.Button("KEY", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 500,
+                                  100, resized_button_image)
+        buttons = [keybutton]
+
+        for b in buttons:
+            screen.blit(b.image, b.rect)
+            screen.blit(b.text, b.text_rect)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -113,8 +131,9 @@ def main():
             elif event.type == MOUSEBUTTONDOWN:
                 for item in list_items:
                     item.click = item.rect.collidepoint(event.pos)
-        screen.blit(background, (0,0))
-        screen.blit(binsize, (50, 40))
+                if keybutton.button_position(mouse):
+                    key.key()
+
         for item in list_items:
             item.draw(screen)
             item.update()
