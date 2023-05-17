@@ -140,7 +140,42 @@ def main():
         for item in list_items:
             ##sound code section
             if bin_rect.colliderect(smallbread_item):
-                pygame.mixer.Sound.play(ping_sound, 1)
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallbutterfly_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallapple_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallheart_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallbone_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallrib_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallankle_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallwishbone_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallhorse_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallfunny_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+            if bin_rect.colliderect(smallpail_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
+                pass
+            if bin_rect.colliderect(smallwrench_item):
+                pygame.mixer.Sound.play(ping_sound)
+                score = 1
 
             ##window pop up code section
             if bin_rect.colliderect(smallheart_item):
