@@ -18,7 +18,8 @@ def main():
     bin = pygame.image.load('Images/bin image.png').convert_alpha()
     binsize = pygame.transform.scale(bin, (180, 190))
     ping_sound = pygame.mixer.Sound("Images/Ping sound effect.mp3")
-    pygame.mixer.music.load("Images/backround music.mp3")
+    pygame.mixer.music.load("Images/backgroundmusicc.mp3")
+    pygame.mixer.music.set_volume(.85)
     pygame.mixer.music.play(-1)
     collision_status = {}
 
