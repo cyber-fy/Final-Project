@@ -1,9 +1,10 @@
 import pygame
-import Button
 import sys
 import game
-import rules
-
+import Button
+import stomachanswer1
+import stomachanswer2
+import stomachanswer3
 
 
 def quiz2():
@@ -14,13 +15,28 @@ def quiz2():
     background = pygame.image.load('Images/stomach slide 1.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
     pygame.display.set_caption("Stomach Quiz")
+
+    button_image = pygame.image.load("Images/quizbutton.png").convert_alpha()
+    resized_button_image = pygame.transform.scale(button_image, (50, 50))
+
+
     running = True
 
     while running:
         mouse = pygame.mouse.get_pos()
         #text, color, font, x, y, image#
-        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 600, 600, pygame.image.load("Images/button.png"))
-        buttons = [quit_button]
+
+        option1_button = Button.Button("", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 210,
+                                       310, resized_button_image)
+
+        option2_button = Button.Button("", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 210,
+                                       410, resized_button_image)
+
+        option3_button = Button.Button("", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 210,
+                                       510, resized_button_image)
+        quit_button = Button.Button("Quit", (255,255,255), pygame.font.SysFont("Helvetica", 20), 450, 600, pygame.image.load("Images/button.png"))
+        backtogame_button = Button.Button("Back to Game", (255,255,255), pygame.font.SysFont("Helvetica", 20), 650, 600, pygame.image.load("Images/button.png"))
+        buttons = [quit_button, option1_button, option2_button, option3_button, backtogame_button]
 
         screen.blit(backgroundsize, (0, 0))
         for b in buttons:
@@ -32,11 +48,18 @@ def quiz2():
                 pygame.quit()
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                if quit_button.button_position(pygame.mouse.get_pos()):
+                if quit_button.button_position(mouse):
                     running = False
                     pygame.quit()
                     sys.exit()
-
+                if option1_button.button_position(mouse):
+                    stomachanswer1.stomachanswer1()
+                if option2_button.button_position(mouse):
+                    stomachanswer2.stomachanswer2()
+                if option3_button.button_position(mouse):
+                    stomachanswer3.stomachanswer3()
+                if backtogame_button.button_position(mouse):
+                    game.main()
         pygame.display.update()
 
 

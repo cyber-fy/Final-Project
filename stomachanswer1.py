@@ -1,17 +1,18 @@
 import pygame
-import heartquiz
+import stomachquiz
 import Button
 import sys
 import game
 
-def heartanswer3():
+
+def stomachanswer1():
     pygame.init()
     screen_width = 1150
     screen_height = 700
     screen = pygame.display.set_mode([screen_width, screen_height])
-    background = pygame.image.load('Images/heart slide 4.png').convert()
+    background = pygame.image.load('Images/stomach slide 2.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
-    pygame.display.set_caption("Heart Answer 3")
+    pygame.display.set_caption("Stomach Answer 1")
 
     running = True
 
@@ -21,9 +22,9 @@ def heartanswer3():
                                     pygame.image.load("Images/button.png"))
         backtogame_button = Button.Button("Back to Game", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 600,
                                           600, pygame.image.load("Images/button.png"))
-        backtoheart_button = Button.Button("Back to Heart", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 800,
+        backtostomach_button = Button.Button("Back to Stomach", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 800,
                                            600, pygame.image.load("Images/button.png"))
-        buttons = [quit_button, backtogame_button, backtoheart_button]
+        buttons = [quit_button, backtogame_button, backtostomach_button]
 
         screen.blit(backgroundsize, (0, 0))
         for b in buttons:
@@ -41,10 +42,10 @@ def heartanswer3():
                     sys.exit()
                 if backtogame_button.button_position(mouse):
                     game.main()
-                if backtoheart_button.button_position(mouse):
-                    heartquiz.quiz1()
+                if backtostomach_button.button_position(mouse):
+                    stomachquiz.quiz2()
         pygame.display.update()
 
 
 if __name__ == "__main__":
-    heartanswer3()
+    stomachanswer1()

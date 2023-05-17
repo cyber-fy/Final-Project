@@ -2,19 +2,19 @@ import pygame
 import sys
 import game
 import Button
-import throatanswer1
-import throatanswer2
-import throatanswer3
+import lunganswer1
+import lunganswer2
+import lunganswer3
 
 
-def quiz4():
+def quiz5():
     pygame.init()
     screen_width = 1150
     screen_height = 700
     screen = pygame.display.set_mode([screen_width, screen_height])
-    background = pygame.image.load('Images/throat slide 1.png').convert()
+    background = pygame.image.load('Images/lung slide 1.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
-    pygame.display.set_caption("Throat Quiz")
+    pygame.display.set_caption("Lungs Quiz")
 
     button_image = pygame.image.load("Images/quizbutton.png").convert_alpha()
     resized_button_image = pygame.transform.scale(button_image, (50, 50))
@@ -53,15 +53,15 @@ def quiz4():
                     pygame.quit()
                     sys.exit()
                 if option1_button.button_position(mouse):
-                    throatanswer1.throatanswer1()
+                    lunganswer1.lunganswer1()
                 if option2_button.button_position(mouse):
-                    throatanswer2.throatanswer2()
+                    lunganswer2.lunganswer2()
                 if option3_button.button_position(mouse):
-                    throatanswer3.throatanswer3()
+                    lunganswer3.lunganswer3()
                 if backtogame_button.button_position(mouse):
                     game.main()
         pygame.display.update()
 
 
 if __name__ == "__main__":
-    quiz4()
+    quiz5()

@@ -10,6 +10,7 @@ import stomachquiz
 import bladderquiz
 import throatquiz
 import ribquiz
+import lungquiz
 from items import Item
 from pygame import QUIT, MOUSEBUTTONDOWN, MOUSEBUTTONUP, MOUSEMOTION
 
@@ -133,7 +134,10 @@ def main():
                 throatquiz.quiz4()
             if bin_rect.colliderect(smallrib_item):
                 running = False
-                ribquiz.quiz5()
+                ribquiz.quiz6()
+            if bin_rect.colliderect(smallwishbone_item):
+                running = False
+                lungquiz.quiz5()
             ##sound code section
             if bin_rect.colliderect(smallbread_item):
                 pygame.mixer.Sound.play(ping_sound, 1)

@@ -32,7 +32,7 @@ def rules():
                   "<br><br>"
                   "<a href=It's time to learn about the rules.>It's time to learn about the rules.</a>"
                   "<br><br>"
-                  "<b>Step 1:</b> Click on any body part."
+                  "<b>Step 1:</b> Click on any body part that you want to learn about."
                   "<br><br>"
                   "<b>Step 2:</b> Drag the body part into the red disposal bin."
                   "<br><br>"
@@ -40,6 +40,8 @@ def rules():
                   "surgery on' (or really just provide treatment for) this body part!"
                   "<br><br>"
                   "Now press the red quit button for the start button so you can begin!"
+                  "<br><br>"
+                  "Whenever "
                   "</font>",
         relative_rect=pygame.Rect(0, 0, 800, 800),
         manager=ui_manager)
