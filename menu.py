@@ -47,6 +47,7 @@ def menu():
                     pygame.quit()
                     sys.exit()
 
+
         screen.blit(text, (240, 275))
         pygame.display.update()
 

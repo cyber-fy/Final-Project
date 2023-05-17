@@ -138,6 +138,10 @@ def main():
             item.draw(screen)
             item.update()
         for item in list_items:
+            ##sound code section
+            if bin_rect.colliderect(smallbread_item):
+                pygame.mixer.Sound.play(ping_sound, 1)
+
             ##window pop up code section
             if bin_rect.colliderect(smallheart_item):
                 running = False
@@ -157,9 +161,7 @@ def main():
             if bin_rect.colliderect(smallwishbone_item):
                 running = False
                 lungquiz.quiz5()
-            ##sound code section
-            if bin_rect.colliderect(smallbread_item):
-                pygame.mixer.Sound.play(ping_sound, 1)
+
         pygame.display.update()
 
 

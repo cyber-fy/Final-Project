@@ -4,6 +4,7 @@ import pygame
 import pygame_gui
 
 import game
+import Button
 
 import pygame_gui.data
 
@@ -17,7 +18,7 @@ from pygame_gui.elements.ui_text_box import UITextBox
 def rules():
     pygame.init()
 
-    display_surface = pygame.display.set_mode((800, 600))
+    screen = pygame.display.set_mode((800, 600))
 
     ui_manager = pygame_gui.UIManager((800, 600), 'data/themes/theme_1.json')
 
@@ -39,9 +40,9 @@ def rules():
                   "<b>Step 3:</b> Learn about some of the real world explanations as to why you may have to 'perform "
                   "surgery on' (or really just provide treatment for) this body part!"
                   "<br><br>"
-                  "Now press the red quit button for the start button so you can begin!"
+                  "Now press the button below to start playing the game!"
                   "<br><br>"
-                  "Whenever "
+                  "Have fun :)"
                   "</font>",
         relative_rect=pygame.Rect(0, 0, 800, 800),
         manager=ui_manager)
@@ -54,10 +55,30 @@ def rules():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 is_running = False
-        display_surface.blit(background, (0, 0))
+        screen.blit(background, (0, 0))
         ui_manager.update(0.01)
-        ui_manager.draw_ui(window_surface=display_surface)
+        ui_manager.draw_ui(window_surface=screen)
+
+        mouse = pygame.mouse.get_pos()
+        begingame_button = Button.Button("Begin the Game!", (255, 255, 255), pygame.font.SysFont("Helvetica", 20), 400,
+                                         500, pygame.image.load("Images/button.png"))
+
+        buttons = [begingame_button]
+
+        for b in buttons:
+            screen.blit(b.image, b.rect)
+            screen.blit(b.text, b.text_rect)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if begingame_button.button_position(mouse):
+                    game.main()
+
         pygame.display.update()
+
 
 if __name__ == "__main__":
     rules()
