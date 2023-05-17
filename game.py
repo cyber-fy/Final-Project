@@ -149,9 +149,6 @@ def main():
                 score = 1
                 running = False
                 heartquiz.quiz1()
-            if bin_rect.colliderect(smallbone_item):
-                pygame.mixer.Sound.play(ping_sound)
-                score = 1
             if bin_rect.colliderect(smallrib_item):
                 pygame.mixer.Sound.play(ping_sound)
                 score = 1
