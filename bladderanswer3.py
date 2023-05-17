@@ -10,7 +10,7 @@ def bladderanswer3():
     screen_width = 1150
     screen_height = 700
     screen = pygame.display.set_mode([screen_width, screen_height])
-    background = pygame.image.load('Images/bladder slide 2.png').convert()
+    background = pygame.image.load('Images/bladder slide 4.png').convert()
     backgroundsize = pygame.transform.scale(background, (1150, 700))
     pygame.display.set_caption("Bladder Answer 3")
 
