@@ -134,32 +134,26 @@ def main():
                 collision_status[item] = True
             if bin_rect.colliderect(smallbread_item):
                 pygame.mixer.Sound.play(ping_sound)
-                score = 1
                 running = False
                 bladderquiz.quiz3()
             if bin_rect.colliderect(smallbutterfly_item):
                 pygame.mixer.Sound.play(ping_sound)
-                score = 1
                 running = False
                 stomachquiz.quiz2()
             if bin_rect.colliderect(smallapple_item):
                 pygame.mixer.Sound.play(ping_sound)
-                score = 1
                 running = False
                 throatquiz.quiz4()
             if bin_rect.colliderect(smallheart_item):
                 pygame.mixer.Sound.play(ping_sound)
-                score = 1
                 running = False
                 heartquiz.quiz1()
             if bin_rect.colliderect(smallrib_item):
                 pygame.mixer.Sound.play(ping_sound)
-                score = 1
                 running = False
                 ribquiz.quiz6()
             if bin_rect.colliderect(smallwishbone_item):
                 pygame.mixer.Sound.play(ping_sound)
-                score = 1
                 running = False
                 lungquiz.quiz5()
         pygame.display.update()
